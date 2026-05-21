@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METTEC — Stratégie Marketing & Branding 2025–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --steel: #1a1f2e;
+    --steel-mid: #252d3d;
+    --steel-light: #2e3a50;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-pale: #f5e9c4;
+    --silver: #8a9ab5;
+    --white: #f4f2ee;
+    --off-white: #ede9e1;
+    --accent: #e05c2a;
+    --accent2: #4a8fbd;
+    --green: #3d8c6f;
+    --bg: #0e1118;
+    --card-bg: rgba(26,31,46,0.92);
+    --border: rgba(201,168,76,0.18);
+    --border-strong: rgba(201,168,76,0.45);
+    --glow: 0 0 40px rgba(201,168,76,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ─── NOISE TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ─── PROGRESS BAR ─── */
+  #progress {
+    position: fixed; top: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    width: 0%; z-index: 9999; transition: width 0.1s linear;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(14,17,24,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--white); font-weight: 300; }
+  .nav-links {
+    display: flex; gap: 0.3rem; list-style: none;
+    font-size: 0.72rem; letter-spacing: 0.12em; font-weight: 500;
+  }
+  .nav-links a {
+    color: var(--silver);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--gold); background: rgba(201,168,76,0.07); }
+  .nav-tag {
+    font-size: 0.68rem; font-family: 'Space Mono', monospace;
+    color: var(--gold); border: 1px solid var(--border-strong);
+    padding: 0.3rem 0.9rem; border-radius: 20px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 100%, rgba(74,143,189,0.06) 0%, transparent 50%),
+      linear-gradient(175deg, #0e1118 0%, #121824 40%, #0a0d15 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .hero-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.25em;
+    color: var(--gold); text-transform: uppercase;
+    border: 1px solid var(--border-strong);
+    padding: 0.5rem 1.5rem; border-radius: 30px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1s ease both;
+    position: relative; z-index: 1;
+    background: rgba(201,168,76,0.05);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300; line-height: 1.05;
+    text-align: center; position: relative; z-index: 1;
+    letter-spacing: -0.02em;
+    animation: fadeUp 1s 0.15s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero h1 strong { font-weight: 700; display: block; }
+  .hero-sub {
+    max-width: 680px; text-align: center;
+    color: var(--silver); font-size: 1.05rem;
+    margin-top: 1.8rem; line-height: 1.7;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  .hero-meta {
+    display: flex; gap: 3rem; margin-top: 3.5rem;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.45s ease both;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 700; color: var(--gold);
+    display: block; line-height: 1;
+  }
+  .hero-stat .lbl {
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--silver);
+    margin-top: 0.4rem;
+  }
+  .divider-v { width: 1px; background: var(--border-strong); }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { position: relative; padding: 7rem 0; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::before {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300; line-height: 1.15; letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-title strong { font-weight: 700; }
+
+  /* ─── SEPARATOR ─── */
+  .sep {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+    margin: 0;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+    box-shadow: var(--glow), 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .card-icon {
+    font-size: 2rem; margin-bottom: 1rem;
+    display: inline-block;
+  }
+  .card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; margin-bottom: 0.6rem;
+    color: var(--off-white);
+  }
+  .card p { color: var(--silver); font-size: 0.9rem; line-height: 1.7; }
+
+  /* ─── BADGE / TAG ─── */
+  .tag {
+    display: inline-block;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    padding: 0.3rem 0.8rem; border-radius: 4px;
+    border: 1px solid; margin: 0.25rem;
+  }
+  .tag-gold { color: var(--gold); border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.07); }
+  .tag-blue { color: var(--accent2); border-color: rgba(74,143,189,0.4); background: rgba(74,143,189,0.07); }
+  .tag-green { color: var(--green); border-color: rgba(61,140,111,0.4); background: rgba(61,140,111,0.07); }
+  .tag-red { color: var(--accent); border-color: rgba(224,92,42,0.4); background: rgba(224,92,42,0.07); }
+
+  /* ─── GRID HELPERS ─── */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+  /* ─── SWOT ─── */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    border-radius: 20px; overflow: hidden;
+    border: 2px solid var(--border-strong);
+  }
+  .swot-cell {
+    padding: 2.5rem;
+    position: relative;
+  }
+  .swot-cell.forces { background: linear-gradient(135deg, rgba(61,140,111,0.15), rgba(61,140,111,0.05)); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .swot-cell.faiblesses { background: linear-gradient(135deg, rgba(224,92,42,0.12), rgba(224,92,42,0.04)); border-bottom: 1px solid var(--border); }
+  .swot-cell.opportunites { background: linear-gradient(135deg, rgba(74,143,189,0.12), rgba(74,143,189,0.04)); border-right: 1px solid var(--border); }
+  .swot-cell.menaces { background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.03)); }
+  .swot-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .swot-label.s { color: var(--green); }
+  .swot-label.w { color: var(--accent); }
+  .swot-label.o { color: var(--accent2); }
+  .swot-label.t { color: var(--gold); }
+  .swot-cell ul { list-style: none; }
+  .swot-cell ul li {
+    font-size: 0.88rem; color: var(--off-white);
+    padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; gap: 0.6rem; line-height: 1.5;
+  }
+  .swot-cell ul li:last-child { border-bottom: none; }
+  .swot-cell ul li::before { content: '→'; color: var(--silver); flex-shrink: 0; font-size: 0.75rem; margin-top: 0.1rem; }
+
+  /* ─── PLATFORM CARDS ─── */
+  .platform-card {
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+    cursor: default;
+  }
+  .platform-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  }
+  .platform-card.priority-1 {
+    background: linear-gradient(135deg, rgba(10,102,194,0.18), rgba(10,102,194,0.06));
+    border-color: rgba(10,102,194,0.4);
+  }
+  .platform-card.priority-1:hover { border-color: rgba(10,102,194,0.7); box-shadow: 0 30px 60px rgba(10,102,194,0.15); }
+  .platform-card.priority-2 {
+    background: linear-gradient(135deg, rgba(24,119,242,0.15), rgba(24,119,242,0.05));
+    border-color: rgba(24,119,242,0.35);
+  }
+  .platform-card.priority-2:hover { border-color: rgba(24,119,242,0.6); box-shadow: 0 30px 60px rgba(24,119,242,0.12); }
+  .platform-card.priority-3 {
+    background: linear-gradient(135deg, rgba(193,53,132,0.15), rgba(193,53,132,0.05));
+    border-color: rgba(193,53,132,0.3);
+  }
+  .platform-card.priority-3:hover { border-color: rgba(193,53,132,0.55); box-shadow: 0 30px 60px rgba(193,53,132,0.12); }
+  .platform-card.priority-4 {
+    background: linear-gradient(135deg, rgba(255,0,80,0.12), rgba(255,0,80,0.04));
+    border-color: rgba(255,0,80,0.25);
+  }
+  .platform-card.priority-5 {
+    background: linear-gradient(135deg, rgba(0,177,89,0.1), rgba(0,177,89,0.03));
+    border-color: rgba(0,177,89,0.2);
+  }
+  .platform-card.priority-6 {
+    background: linear-gradient(135deg, rgba(255,102,0,0.1), rgba(255,102,0,0.03));
+    border-color: rgba(255,102,0,0.2);
+  }
+  .platform-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .platform-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--silver);
+    margin-bottom: 1.2rem;
+  }
+  .priority-badge {
+    position: absolute; top: 1.2rem; right: 1.2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; font-weight: 700;
+    padding: 0.3rem 0.8rem; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .pb-must { background: rgba(201,168,76,0.2); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
+  .pb-high { background: rgba(74,143,189,0.2); color: var(--accent2); border: 1px solid rgba(74,143,189,0.4); }
+  .pb-med { background: rgba(61,140,111,0.2); color: var(--green); border: 1px solid rgba(61,140,111,0.4); }
+  .platform-metrics {
+    display: flex; gap: 1.5rem; margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  .pm-item { text-align: center; }
+  .pm-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--gold);
+    display: block; line-height: 1;
+  }
+  .pm-lbl {
+    font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--silver); margin-top: 0.2rem;
+  }
+  .platform-card ul { list-style: none; margin-top: 1rem; }
+  .platform-card ul li {
+    font-size: 0.85rem; color: var(--off-white);
+    padding: 0.35rem 0; display: flex; gap: 0.5rem; line-height: 1.5;
+  }
+  .platform-card ul li::before { content: '▸'; color: var(--gold); flex-shrink: 0; font-size: 0.7rem; margin-top: 0.15rem; }
+  .focus-bar {
+    margin-top: 1.2rem;
+    height: 4px; border-radius: 2px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+  .focus-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+    width: 0%;
+  }
+  .focus-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.7rem; color: var(--silver);
+    margin-bottom: 0.4rem; margin-top: 0.8rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 2px; transform: translateX(-50%);
+    background: linear-gradient(180deg, var(--gold) 0%, rgba(201,168,76,0.3) 60%, transparent 100%);
+  }
+  .timeline-item {
+    display: flex; align-items: flex-start; gap: 3rem;
+    margin-bottom: 4rem; position: relative;
+  }
+  .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+  .timeline-item:nth-child(even) .timeline-content { text-align: right; }
+  .timeline-item:nth-child(even) .timeline-content .tag { float: right; clear: both; }
+  .timeline-dot {
+    position: absolute; left: 50%; top: 0.5rem;
+    transform: translateX(-50%);
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--gold), 0 0 20px rgba(201,168,76,0.5);
+    z-index: 1; flex-shrink: 0;
+  }
+  .timeline-content {
+    flex: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.8rem;
+  }
+  .timeline-phase {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; margin-bottom: 0.8rem;
+  }
+  .timeline-content ul { list-style: none; margin-top: 0.8rem; }
+  .timeline-content ul li {
+    font-size: 0.85rem; color: var(--off-white);
+    padding: 0.3rem 0; display: flex; gap: 0.5rem;
+  }
+  .timeline-item:nth-child(even) .timeline-content ul li { flex-direction: row-reverse; }
+  .timeline-content ul li::before { content: '◆'; color: var(--gold); font-size: 0.5rem; margin-top: 0.35rem; flex-shrink: 0; }
+  .timeline-spacer { flex: 1; }
+
+  /* ─── KPI TABLE ─── */
+  .kpi-table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); }
+  .kpi-table thead tr { background: rgba(201,168,76,0.1); }
+  .kpi-table th {
+    padding: 1rem 1.4rem; text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 400;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .kpi-table td {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.88rem; color: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top; line-height: 1.5;
+  }
+  .kpi-table tbody tr:last-child td { border-bottom: none; }
+  .kpi-table tbody tr { background: rgba(26,31,46,0.5); transition: background 0.2s; }
+  .kpi-table tbody tr:hover { background: rgba(26,31,46,0.9); }
+  .kpi-table tbody tr:nth-child(even) { background: rgba(37,45,61,0.4); }
+
+  /* ─── BUDGET VISUAL ─── */
+  .budget-bar {
+    display: flex; height: 56px; border-radius: 12px; overflow: hidden; gap: 3px;
+    margin: 2rem 0;
+  }
+  .budget-seg {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; font-family: 'Space Mono', monospace;
+    color: var(--bg); transition: flex 0.8s cubic-bezier(0.16,1,0.3,1);
+    border-radius: 6px; cursor: default;
+    position: relative;
+  }
+  .budget-seg:hover { filter: brightness(1.15); }
+  .budget-seg .seg-label {
+    position: absolute; bottom: -2rem;
+    font-size: 0.65rem; color: var(--silver);
+    white-space: nowrap; font-family: 'DM Sans', sans-serif; font-weight: 400;
+  }
+
+  /* ─── PERSONA ─── */
+  .persona-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    transition: all 0.3s ease;
+  }
+  .persona-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+  .persona-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--steel-light), var(--steel-mid));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; margin-bottom: 1.2rem;
+    border: 2px solid var(--border-strong);
+  }
+  .persona-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+  .persona-role { font-size: 0.8rem; color: var(--silver); margin-bottom: 1.2rem; }
+  .persona-attr { margin-bottom: 0.5rem; }
+  .persona-attr-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.2rem;
+  }
+  .persona-attr-val { font-size: 0.85rem; color: var(--off-white); }
+
+  /* ─── CONTENT PILLAR ─── */
+  .pillar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid; border-radius: 0 16px 16px 0;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+  }
+  .pillar:hover { transform: translateX(4px); box-shadow: var(--glow); }
+  .pillar.p1 { border-left-color: var(--gold); }
+  .pillar.p2 { border-left-color: var(--accent2); }
+  .pillar.p3 { border-left-color: var(--green); }
+  .pillar.p4 { border-left-color: var(--accent); }
+  .pillar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem;
+  }
+  .pillar p { font-size: 0.88rem; color: var(--silver); line-height: 1.7; }
+  .pillar .pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300; color: var(--gold);
+    float: right; line-height: 1;
+  }
+
+  /* ─── COMPETITOR TABLE ─── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 180px repeat(5, 1fr);
+    gap: 2px; border-radius: 16px; overflow: hidden;
+  }
+  .comp-cell {
+    background: rgba(26,31,46,0.7);
+    padding: 1rem; font-size: 0.82rem;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .comp-cell:hover { background: rgba(37,45,61,0.9); }
+  .comp-header {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); background: rgba(201,168,76,0.08) !important;
+    font-weight: 700;
+  }
+  .comp-row-label {
+    color: var(--silver); font-weight: 500;
+    justify-content: flex-start; text-align: left;
+    background: rgba(14,17,24,0.8) !important;
+    font-size: 0.8rem;
+  }
+  .comp-cell.mettec { background: rgba(201,168,76,0.07) !important; color: var(--gold); font-weight: 700; }
+  .star { color: var(--gold); }
+  .star-off { color: rgba(201,168,76,0.25); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+  }
+  .animate-on-scroll {
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding: 0.7rem 0.8rem; border-radius: 8px;
+    text-decoration: none; color: var(--silver);
+    font-size: 0.88rem; transition: all 0.2s;
+  }
+  .toc-item:hover { background: rgba(201,168,76,0.07); color: var(--gold); }
+  .toc-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; color: var(--gold);
+    background: rgba(201,168,76,0.1); padding: 0.2rem 0.5rem;
+    border-radius: 4px; min-width: 2rem; text-align: center;
+  }
+
+  /* ─── BIG QUOTE ─── */
+  .big-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300; font-style: italic;
+    line-height: 1.4; text-align: center;
+    color: var(--off-white); max-width: 900px;
+    margin: 0 auto; padding: 0 2rem;
+    position: relative;
+  }
+  .big-quote::before, .big-quote::after {
+    content: '"';
+    font-size: 6rem; color: rgba(201,168,76,0.15);
+    position: absolute; font-style: normal; line-height: 1;
+  }
+  .big-quote::before { top: -1.5rem; left: -1rem; }
+  .big-quote::after { bottom: -3rem; right: -1rem; }
+
+  /* ─── DIVIDER SPECIAL ─── */
+  .divider-gold {
+    display: flex; align-items: center; gap: 1.5rem;
+    margin: 5rem 0;
+  }
+  .divider-gold::before, .divider-gold::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong));
+  }
+  .divider-gold::after { background: linear-gradient(90deg, var(--border-strong), transparent); }
+  .divider-gold span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* ─── CHAPTER HEADER ─── */
+  .chapter-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 3rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem; font-weight: 700; line-height: 1;
+    color: rgba(201,168,76,0.12); margin-right: 1.5rem;
+    flex-shrink: 0; align-self: flex-start;
+  }
+  .chapter-title-group { flex: 1; }
+
+  /* ─── BACK TO TOP ─── */
+  #backTop {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(201,168,76,0.15); border: 1px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); cursor: pointer;
+    transition: all 0.3s; font-size: 1.1rem;
+    opacity: 0; pointer-events: none;
+    backdrop-filter: blur(10px);
+  }
+  #backTop.visible { opacity: 1; pointer-events: all; }
+  #backTop:hover { background: rgba(201,168,76,0.25); transform: translateY(-3px); }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.04));
+    border: 1px solid var(--border-strong);
+    border-radius: 16px; padding: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .highlight-box::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--gold); font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  footer p { color: var(--silver); font-size: 0.82rem; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .comp-grid { grid-template-columns: 140px repeat(5, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links, .nav-tag { display: none; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero-meta { gap: 1.5rem; }
+    section { padding: 4rem 0; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .swot-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .swot-cell { border-right: none !important; }
+    .toc { grid-template-columns: 1fr; }
+    .timeline::before { left: 20px; }
+    .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; padding-left: 50px; }
+    .timeline-item:nth-child(even) .timeline-content { text-align: left; }
+    .timeline-dot { left: 20px; }
+    .timeline-spacer { display: none; }
+    .chapter-header { flex-direction: column; align-items: flex-start; }
+    .chapter-num { font-size: 4rem; }
+    .comp-grid { display: none; }
+    .budget-bar { height: 40px; }
+    .container { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">METTEC <span>Strategy</span></a>
+  <ul class="nav-links">
+    <li><a href="#etude">Étude</a></li>
+    <li><a href="#branding">Branding</a></li>
+    <li><a href="#plateformes">Plateformes</a></li>
+    <li><a href="#contenu">Contenu</a></li>
+    <li><a href="#plan">Plan</a></li>
+    <li><a href="#kpi">KPIs</a></li>
+  </ul>
+  <div class="nav-tag">2025 – 2026</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-label">Stratégie Marketing & Branding Complète</div>
+  <h1>
+    <em>METTEC</em><br>
+    <strong>Construire l'Autorité.<br>Dominer le Marché.</strong>
+  </h1>
+  <p class="hero-sub">
+    Analyse approfondie, stratégie de marque, plan de plateformes sociales et plan d'action opérationnel sur 12 mois pour positionner METTEC comme <em>la référence</em> de la construction métallique modulaire en Tunisie et en Afrique du Nord.
+  </p>
+  <div class="hero-meta">
+    <div class="hero-stat">
+      <span class="num">500+</span>
+      <span class="lbl">Projets Livrés</span>
+    </div>
+    <div class="divider-v"></div>
+    <div class="hero-stat">
+      <span class="num">10+</span>
+      <span class="lbl">Pays ciblés</span>
+    </div>
+    <div class="divider-v"></div>
+    <div class="hero-stat">
+      <span class="num">15</span>
+      <span class="lbl">Années d'Expertise</span>
+    </div>
+    <div class="divider-v"></div>
+    <div class="hero-stat">
+      <span class="num">3×</span>
+      <span class="lbl">ISO Certifié</span>
+    </div>
+  </div>
+</section>
+
+<!-- TOC -->
+<section style="padding: 5rem 0 3rem;" id="sommaire">
+  <div class="container">
+    <div class="section-label animate-on-scroll">Sommaire</div>
+    <h2 class="section-title animate-on-scroll" style="margin-bottom:2.5rem;">
+      Table des <em>Matières</em>
+    </h2>
+    <div class="toc animate-on-scroll">
+      <a href="#etude" class="toc-item"><span class="toc-num">01</span> Étude de la Société</a>
+      <a href="#swot" class="toc-item"><span class="toc-num">02</span> Analyse SWOT</a>
+      <a href="#marche" class="toc-item"><span class="toc-num">03</span> Analyse du Marché</a>
+      <a href="#personas" class="toc-item"><span class="toc-num">04</span> Personas Cibles</a>
+      <a href="#branding" class="toc-item"><span class="toc-num">05</span> Stratégie de Branding</a>
+      <a href="#plateformes" class="toc-item"><span class="toc-num">06</span> Plateformes & Priorités</a>
+      <a href="#contenu" class="toc-item"><span class="toc-num">07</span> Stratégie de Contenu</a>
+      <a href="#paid" class="toc-item"><span class="toc-num">08</span> Publicité Payante</a>
+      <a href="#plan" class="toc-item"><span class="toc-num">09</span> Plan d'Action 12 Mois</a>
+      <a href="#budget" class="toc-item"><span class="toc-num">10</span> Budget Recommandé</a>
+      <a href="#kpi" class="toc-item"><span class="toc-num">11</span> KPIs & Métriques</a>
+      <a href="#conclusion" class="toc-item"><span class="toc-num">12</span> Synthèse & Conclusion</a>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — ÉTUDE DE LA SOCIÉTÉ
+═══════════════════════════════════════════════ -->
+<section id="etude">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">01</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Étude de la Société</div>
+        <h2 class="section-title animate-on-scroll">Qui est <em>METTEC</em> ?</h2>
+      </div>
+    </div>
+
+    <div class="grid-2 animate-on-scroll" style="gap:2rem; margin-bottom:3rem;">
+      <div>
+        <p style="color:var(--silver); line-height:1.9; font-size:1rem; margin-bottom:1.5rem;">
+          <strong style="color:var(--off-white);">METTEC</strong> est une société tunisienne spécialisée dans la fabrication de cabines modulaires à ossature métallique, de panneaux sandwichs et de charpentes métalliques. Fondée en 2015, elle est membre du <strong style="color:var(--gold);">Groupe Bayoudh</strong>, un groupe industriel reconnu en Tunisie.
+        </p>
+        <p style="color:var(--silver); line-height:1.9; font-size:1rem; margin-bottom:1.5rem;">
+          Avec plus de <strong style="color:var(--off-white);">500 projets livrés</strong> en Tunisie et en Afrique du Nord, METTEC a su bâtir une expertise solide dans plusieurs secteurs : industriel, résidentiel, sécurité, hôtellerie, santé et éducation. Sa proposition de valeur centrale : <em style="color:var(--gold);">"Votre idée, notre acier — Construit pour l'Éternité."</em>
+        </p>
+        <p style="color:var(--silver); line-height:1.9; font-size:1rem;">
+          La société se distingue par ses <strong style="color:var(--off-white);">trois certifications ISO</strong> (9001, 14001, 45001), son processus en 11 étapes clé en main, sa garantie structure de 20 ans, et sa capacité à livrer des solutions sur mesure du simple poste de garde à la villa intelligente hors réseau.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div class="highlight-box">
+          <div class="section-label" style="margin-bottom:0.8rem;">Identité Clé</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div>
+              <div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;font-family:'Space Mono',monospace;margin-bottom:0.3rem;">Fondée</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);">2015</div>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;font-family:'Space Mono',monospace;margin-bottom:0.3rem;">Siège</div>
+              <div style="font-size:0.95rem;color:var(--off-white);font-weight:500;">Monastir, Tunisie</div>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;font-family:'Space Mono',monospace;margin-bottom:0.3rem;">Marchés</div>
+              <div style="font-size:0.95rem;color:var(--off-white);font-weight:500;">TN · Afrique N. · Europe</div>
+            </div>
+            <div>
+              <div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;font-family:'Space Mono',monospace;margin-bottom:0.3rem;">Groupe</div>
+              <div style="font-size:0.95rem;color:var(--off-white);font-weight:500;">Groupe Bayoudh</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏗️</div>
+          <h3>Gammes de Produits</h3>
+          <div style="margin-top:0.8rem; display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="tag tag-gold">Standard / Industriel</span>
+            <span class="tag tag-blue">Habitation Comfort</span>
+            <span class="tag tag-green">Smart / Domotique</span>
+            <span class="tag tag-blue">Autonome / Off-Grid</span>
+            <span class="tag tag-red">Sécurité / Gardiennage</span>
+            <span class="tag tag-gold">Gamme Extra (Bar, Coffee)</span>
+            <span class="tag tag-green">Panneaux Sandwich</span>
+            <span class="tag tag-gold">Charpente Métallique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partenaires clés -->
+    <div class="animate-on-scroll" style="margin-bottom:2rem;">
+      <div class="section-label">Références & Partenaires Stratégiques</div>
+    </div>
+    <div class="grid-4 animate-on-scroll" style="margin-bottom:3rem;">
+      <div class="card"><div class="card-icon">✈️</div><h3>Aéroport Monastir</h3><p>Poste de contrôle technique. Référence institutionnelle premium, certifications ISO déterminantes.</p></div>
+      <div class="card"><div class="card-icon">🏥</div><h3>Hôpital Fattouma Bourguiba</h3><p>Structure de santé publique. Démontre la capacité à répondre aux marchés publics critiques.</p></div>
+      <div class="card"><div class="card-icon">⚡</div><h3>STEG</h3><p>Société Tunisienne de l'Électricité et du Gaz. Validation sectorielle industrie lourde.</p></div>
+      <div class="card"><div class="card-icon">🇨🇳</div><h3>Energy China</h3><p>Partenaire international. Ouvre la voie vers les marchés asiatiques et les projets d'énergie.</p></div>
+    </div>
+
+    <div class="highlight-box animate-on-scroll">
+      <p style="color:var(--off-white); font-size:1rem; line-height:1.8;">
+        <strong style="color:var(--gold);">Avantages concurrentiels réels :</strong> Triple certification ISO · Garantie structure 20 ans · Configurateur 3D en ligne · Livraison clé en main · SAV 24/7 · Présence LinkedIn, Facebook, Instagram & TikTok · Appartenance au Groupe Bayoudh (crédibilité institutionnelle) · Showroom Ben Arous (couverture Grand Tunis) · Processus 11 étapes transparent.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — SWOT
+═══════════════════════════════════════════════ -->
+<section id="swot" style="background: linear-gradient(180deg, rgba(201,168,76,0.02) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">02</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Analyse Stratégique</div>
+        <h2 class="section-title animate-on-scroll">Analyse <em>SWOT</em> METTEC</h2>
+      </div>
+    </div>
+    <div class="swot-grid animate-on-scroll">
+      <div class="swot-cell forces">
+        <div class="swot-label s">💪 Forces (Strengths)</div>
+        <ul>
+          <li>Triple certification ISO 9001, 14001, 45001</li>
+          <li>500+ projets livrés — portfolio solide et diversifié</li>
+          <li>Appartenance au Groupe Bayoudh (crédibilité groupe)</li>
+          <li>Gamme très large : industriel, résidentiel, off-grid, F&B</li>
+          <li>Garantie structure 20 ans — argument fort</li>
+          <li>Configurateur 3D en ligne innovant</li>
+          <li>Livraison clé en main avec SAV 24/7</li>
+          <li>Partenaires institutionnels (STEG, hôpitaux, aéroport)</li>
+          <li>Présence multi-plateformes : LinkedIn, Facebook, Instagram, TikTok</li>
+          <li>Réponse sous 24h — process commercial réactif</li>
+          <li>Showroom dans deux villes stratégiques</li>
+        </ul>
+      </div>
+      <div class="swot-cell faiblesses">
+        <div class="swot-label w">⚠️ Faiblesses (Weaknesses)</div>
+        <ul>
+          <li>Faible notoriété digitale hors Tunisie</li>
+          <li>Contenu social media insuffisant en volume et régularité</li>
+          <li>Pas de page LinkedIn Entreprise optimisée (showcase B2B)</li>
+          <li>Aucune stratégie de contenu SEO structurée (blog, articles)</li>
+          <li>Peu de témoignages vidéo clients vérifiables</li>
+          <li>Absence de campagnes Google Ads / Meta Ads structurées</li>
+          <li>Site web sans version arabe ni anglaise</li>
+          <li>Manque de cas d'usage chiffrés (ROI client)</li>
+        </ul>
+      </div>
+      <div class="swot-cell opportunites">
+        <div class="swot-label o">🚀 Opportunités (Opportunities)</div>
+        <ul>
+          <li>Boom construction modulaire en Afrique subsaharienne</li>
+          <li>Croissance de l'habitat alternatif en Tunisie post-2023</li>
+          <li>Demande croissante solutions off-grid (solaire autonome)</li>
+          <li>Marchés publics africains : santé, éducation, sécurité</li>
+          <li>Montée du tourisme alternatif : glamping, éco-lodges</li>
+          <li>Tendance B2C habitat modulaire (jeunes propriétaires)</li>
+          <li>LinkedIn B2B : décideurs africains actifs et peu ciblés</li>
+          <li>YouTube : niche très peu couverte en arabe/français</li>
+          <li>Partenariats architectes et promoteurs immobiliers</li>
+          <li>Expansion vers l'Europe du Sud (Espagne, Italie, France)</li>
+        </ul>
+      </div>
+      <div class="swot-cell menaces">
+        <div class="swot-label t">🛡️ Menaces (Threats)</div>
+        <ul>
+          <li>Concurrence prix des acteurs non certifiés locaux</li>
+          <li>Instabilité économique tunisienne (taux de change, inflation)</li>
+          <li>Concurrents marocains et émiratis bien positionnés digitalement</li>
+          <li>Coût des matières premières (acier) volatile</li>
+          <li>Délais logistiques pour marchés export</li>
+          <li>Copie des concepts par des acteurs locaux non certifiés</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — MARCHÉ
+═══════════════════════════════════════════════ -->
+<section id="marche">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">03</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Contexte</div>
+        <h2 class="section-title animate-on-scroll">Analyse du <em>Marché</em></h2>
+      </div>
+    </div>
+
+    <div class="grid-3 animate-on-scroll" style="margin-bottom:3rem;">
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Marché Tunisie</h3>
+        <p>Marché primaire. Forte demande dans l'industrie, la santé, la sécurité et l'habitat alternatif. Concurrence locale fragmentée, peu certifiée. Avantage METTEC : confiance groupe + certifications ISO.</p>
+        <div style="margin-top:1rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-gold">B2B · Industrie</span>
+          <span class="tag tag-green">B2B · Public</span>
+          <span class="tag tag-blue">B2C · Résidentiel</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Afrique du Nord & Subsaharienne</h3>
+        <p>Marché d'expansion. Algérie, Libye, Maroc, puis Sénégal, Côte d'Ivoire, Cameroun. Besoins massifs en infrastructures de santé, sécurité et logement modulaire dans le cadre de marchés publics et ONG.</p>
+        <div style="margin-top:1rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-red">B2B · Marchés Publics</span>
+          <span class="tag tag-blue">B2B · ONG / Humanitaire</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🇪🇺</div>
+        <h3>Europe du Sud</h3>
+        <p>Marché à moyen terme. France, Italie, Espagne. Forte demande pour logements alternatifs, extensions de maison, tiny houses, glamping et espaces F&B modulaires. Prix compétitifs vs. fabricants locaux.</p>
+        <div style="margin-top:1rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-gold">B2C · Habitat Alt.</span>
+          <span class="tag tag-green">B2B · Tourisme</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitive Landscape -->
+    <div class="section-label animate-on-scroll" style="margin-bottom:1.5rem;">Paysage Concurrentiel</div>
+    <div class="comp-grid animate-on-scroll">
+      <div class="comp-cell comp-header">Critère</div>
+      <div class="comp-cell comp-header" style="color:var(--gold-light);">METTEC</div>
+      <div class="comp-cell comp-header">Concurrent A<br><span style="font-weight:300;color:var(--silver);">Local non certifié</span></div>
+      <div class="comp-cell comp-header">Concurrent B<br><span style="font-weight:300;color:var(--silver);">Maroc</span></div>
+      <div class="comp-cell comp-header">Concurrent C<br><span style="font-weight:300;color:var(--silver);">Turquie</span></div>
+      <div class="comp-cell comp-header">Concurrent D<br><span style="font-weight:300;color:var(--silver);">Chine</span></div>
+
+      <div class="comp-cell comp-row-label">Certifications ISO</div>
+      <div class="comp-cell mettec"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+
+      <div class="comp-cell comp-row-label">Présence Digitale</div>
+      <div class="comp-cell mettec"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+
+      <div class="comp-cell comp-row-label">Sur Mesure</div>
+      <div class="comp-cell mettec"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star">★</span><span class="star-off">★★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+
+      <div class="comp-cell comp-row-label">SAV & Garantie</div>
+      <div class="comp-cell mettec"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★</span><span class="star-off">★★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+
+      <div class="comp-cell comp-row-label">Délai Livraison</div>
+      <div class="comp-cell mettec"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★</span><span class="star-off">★★</span></div>
+      <div class="comp-cell"><span class="star-off">★★★</span></div>
+
+      <div class="comp-cell comp-row-label">Prix Compétitif</div>
+      <div class="comp-cell mettec"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+      <div class="comp-cell"><span class="star">★★</span><span class="star-off">★</span></div>
+      <div class="comp-cell"><span class="star">★</span><span class="star-off">★★</span></div>
+      <div class="comp-cell"><span class="star">★★★</span></div>
+    </div>
+    <p style="color:var(--silver);font-size:0.78rem;margin-top:1rem;font-style:italic;">★★★ Excellent · ★★ Bon · ★ Moyen · — Faible</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — PERSONAS
+═══════════════════════════════════════════════ -->
+<section id="personas" style="background: linear-gradient(180deg, rgba(74,143,189,0.03) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">04</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Ciblage</div>
+        <h2 class="section-title animate-on-scroll">Personas <em>Cibles</em></h2>
+      </div>
+    </div>
+
+    <div class="grid-3 animate-on-scroll">
+      <div class="persona-card">
+        <div class="persona-avatar">🏭</div>
+        <div class="persona-name">Ahmed K.</div>
+        <div class="persona-role">Directeur Technique / Industriel</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2B</div>
+          <div class="persona-attr-val">Responsable technique dans une usine, une zone industrielle ou un grand groupe. 35–55 ans.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Cabines industrielles, postes de garde, vestiaires, blocs sanitaires, bureaux de chantier.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Déclencheur Achat</div>
+          <div class="persona-attr-val">Certifications, délais, références sectorielles, rapport qualité-prix documenté.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-blue">LinkedIn</span>
+          <span class="tag tag-gold">WhatsApp Pro</span>
+          <span class="tag tag-green">E-mail</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🏛️</div>
+        <div class="persona-name">Fatma B.</div>
+        <div class="persona-role">Responsable Marchés Publics</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2B Gov.</div>
+          <div class="persona-attr-val">Acheteur public, ministère, hôpital, commune. 38–55 ans. Tunisie + Afrique.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Salles de classe modulaires, unités médicales, postes de contrôle, logements temporaires.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Déclencheur Achat</div>
+          <div class="persona-attr-val">Conformité ISO, capacité financière groupe, references institutionnelles, dossier technique.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-blue">LinkedIn</span>
+          <span class="tag tag-green">Email Institutionnel</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🏡</div>
+        <div class="persona-name">Sami & Rania</div>
+        <div class="persona-role">Couple / Propriétaire B2C</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2C</div>
+          <div class="persona-attr-val">Couple jeune ou famille, cherche une résidence principale ou secondaire modulaire. 28–45 ans.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Villa S+1 ou S+2 sur mesure, maison off-grid solaire, studio annexe, chalet.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Déclencheur Achat</div>
+          <div class="persona-attr-val">Inspiration visuelle, témoignages, prix accessible, configurateur interactif, garantie.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-red">Instagram</span>
+          <span class="tag tag-blue">Facebook</span>
+          <span class="tag tag-gold">TikTok</span>
+          <span class="tag tag-green">YouTube</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🏨</div>
+        <div class="persona-name">Karim M.</div>
+        <div class="persona-role">Investisseur Hôtelier / Tourisme</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2B Premium</div>
+          <div class="persona-attr-val">Propriétaire d'hôtel, de parc touristique ou investisseur dans l'agritourisme / glamping. 40–60 ans.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Chalets, bungalows, bars modulaires, coffee shops, kiosques d'accueil haut de gamme.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-red">Instagram</span>
+          <span class="tag tag-blue">LinkedIn</span>
+          <span class="tag tag-gold">Pinterest</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🌱</div>
+        <div class="persona-name">ONG / Humanitaire</div>
+        <div class="persona-role">Coordinateur Logistique International</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2B Export</div>
+          <div class="persona-attr-val">Coordinateur logistique pour ONG, programme ONU, gouvernement africain. 30–50 ans.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Unités médicales, abris temporaires, salles de classe d'urgence, off-grid total.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-blue">LinkedIn</span>
+          <span class="tag tag-green">Appels d'Offres</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">☕</div>
+        <div class="persona-name">Yasmine H.</div>
+        <div class="persona-role">Entrepreneur F&B / Restauratrice</div>
+        <div class="persona-attr">
+          <div class="persona-attr-label">Profil B2C / PME</div>
+          <div class="persona-attr-val">Entrepreneur qui veut ouvrir un coffee shop, un bar lounge ou un food truck fixe modulaire. 25–40 ans.</div>
+        </div>
+        <div class="persona-attr" style="margin-top:0.8rem;">
+          <div class="persona-attr-label">Besoins</div>
+          <div class="persona-attr-val">Cabine café, kiosque, module F&B clé en main, avec aménagement intérieur inclus.</div>
+        </div>
+        <div style="margin-top:1rem;">
+          <span class="tag tag-red">Instagram</span>
+          <span class="tag tag-gold">TikTok</span>
+          <span class="tag tag-blue">Facebook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — BRANDING
+═══════════════════════════════════════════════ -->
+<section id="branding">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">05</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Identité & Positionnement</div>
+        <h2 class="section-title animate-on-scroll">Stratégie de <em>Branding</em></h2>
+      </div>
+    </div>
+
+    <div class="big-quote animate-on-scroll" style="margin-bottom:4rem;">
+      METTEC ne vend pas de l'acier.<br>METTEC vend <em style="color:var(--gold);">la permanence, l'audace, la liberté de construire.</em>
+    </div>
+
+    <div class="grid-2 animate-on-scroll" style="margin-bottom:3rem; gap:2rem;">
+      <div>
+        <div class="section-label" style="margin-bottom:1.2rem;">Territoire de Marque</div>
+        <div class="card" style="margin-bottom:1rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;">Brand Promise</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--off-white);">"Votre idée, notre acier. Construit pour l'Éternité."</p>
+        </div>
+        <div class="card" style="margin-bottom:1rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;">Positionnement Cible</div>
+          <p style="color:var(--silver);line-height:1.7;">METTEC doit se positionner comme le <strong style="color:var(--off-white);">constructeur certifié premium</strong> de la région MENA — pas le moins cher, mais le plus <strong style="color:var(--gold);">fiable, créatif et durable</strong>. L'Apple de la construction modulaire africaine.</p>
+        </div>
+        <div class="card">
+          <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;">Valeurs de Marque</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
+            <span class="tag tag-gold">Excellence Certifiée</span>
+            <span class="tag tag-blue">Innovation Modulaire</span>
+            <span class="tag tag-green">Durabilité & Écologie</span>
+            <span class="tag tag-red">Sur Mesure Sans Compromis</span>
+            <span class="tag tag-gold">Confiance & Transparence</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:1.2rem;">Direction Créative Recommandée</div>
+        <div class="grid-2" style="gap:1rem;">
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Palette Visuelle</h3>
+            <p>Maintenir le noir profond + or métallique. Ajouter un <strong style="color:var(--off-white);">bleu acier</strong> (#2E5C8A) pour la confiance B2B. Blanc cassé pour l'espace aéré. Aucune couleur criarde.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">✍️</div>
+            <h3>Typographie</h3>
+            <p>Titres en <strong style="color:var(--off-white);">serif élégant</strong> (Cormorant, Playfair) pour prestige. Corps en <strong style="color:var(--off-white);">sans-serif net</strong> (DM Sans, Sora). Éviter les polices génériques.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📸</div>
+            <h3>Direction Photo</h3>
+            <p>Photos aériennes de chantier, timelapse montage, intérieurs architecturaux, lumière dorée heure bleue. <strong style="color:var(--off-white);">CGI et rendus 3D</strong> haute définition pour gammes.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎬</div>
+            <h3>Ton de Voix</h3>
+            <p><strong style="color:var(--off-white);">Confiant, précis, visionnaire.</strong> On parle comme un architecte de haut niveau, pas comme un vendeur. Storytelling de projet : "Voilà comment nous avons construit le rêve de…"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box animate-on-scroll">
+      <div class="section-label" style="margin-bottom:1rem;">Recommandations Branding Urgentes</div>
+      <div class="grid-2" style="gap:1.5rem;">
+        <div>
+          <h4 style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:0.6rem;">🔴 Actions Prioritaires</h4>
+          <ul style="list-style:none;">
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Créer un Brand Book officiel (charte graphique complète)</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Produire un video brand film cinématographique 2-3 min</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Retravailler le logo pour version horizontale, icône seule, dark/light</li>
+            <li style="padding:0.35rem 0;font-size:0.88rem;color:var(--off-white);">→ Templates de posts pour chaque plateforme (cohérence visuelle)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--accent2);font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:0.6rem;">🔵 Actions Moyens Terme</h4>
+          <ul style="list-style:none;">
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Traduire le site web en arabe et anglais</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Développer un catalogue produit imprimé et digital premium</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--off-white);">→ Créer des case studies clients avec données chiffrées</li>
+            <li style="padding:0.35rem 0;font-size:0.88rem;color:var(--off-white);">→ Vêtements et goodies brandés pour les équipes terrain</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — PLATEFORMES
+═══════════════════════════════════════════════ -->
+<section id="plateformes" style="background: linear-gradient(180deg, rgba(10,102,194,0.03) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">06</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Digital Marketing</div>
+        <h2 class="section-title animate-on-scroll">Plateformes & <em>Priorités</em></h2>
+      </div>
+    </div>
+
+    <div class="highlight-box animate-on-scroll" style="margin-bottom:3rem;">
+      <p style="color:var(--off-white); line-height:1.8;">
+        <strong style="color:var(--gold);">Principe directeur :</strong> METTEC opère en B2B ET B2C avec des cycles de décision très différents. La stratégie multi-plateforme doit <em>concentrer l'énergie</em> là où le ROI est maximal, et maintenir une présence minimale viable partout ailleurs. Voici le classement par priorité absolue.
+      </p>
+    </div>
+
+    <!-- PRIORITÉ 1 : LINKEDIN -->
+    <div class="platform-card priority-1 animate-on-scroll" style="margin-bottom:1.5rem;">
+      <span class="priority-badge pb-must">🔥 Priorité #1 — Incontournable B2B</span>
+      <div class="platform-name" style="color:#70b5f9;">LinkedIn</div>
+      <div class="platform-type">Réseau Professionnel B2B · 1 Milliard d'Utilisateurs Mondiaux</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">70%</span><span class="pm-lbl">Décideurs B2B</span></div>
+            <div class="pm-item"><span class="pm-num">4×</span><span class="pm-lbl">+ ROI B2B vs FB</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>95%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="95"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#70b5f9;">Pourquoi c'est la plateforme N°1 pour METTEC :</strong> LinkedIn est le canal direct vers les directeurs techniques, DG, responsables achats, architectes, promoteurs immobiliers et décideurs publics en Tunisie et en Afrique. Les décisions B2B d'investissement dans les structures métalliques se font après avoir consulté des <em>références, case studies et contenus d'expertise</em> — exactement ce que LinkedIn valorise.
+          </p>
+          <ul>
+            <li>Page Entreprise LinkedIn optimisée (SEO, mots-clés métier, certifications mises en avant)</li>
+            <li>Publications 4–5x/semaine : études de cas, projets livrés, témoignages vidéo DT</li>
+            <li>Articles LinkedIn longs sur tendances construction modulaire Afrique</li>
+            <li>LinkedIn Ads ciblés : secteur industrie, construction, santé, Tunisie + Maroc + Afrique Sub-Saharienne</li>
+            <li>Profils personnels des dirigeants optimisés et actifs (personal branding PDG)</li>
+            <li>LinkedIn Sales Navigator pour prospection directe PME et DG</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIORITÉ 2 : FACEBOOK -->
+    <div class="platform-card priority-2 animate-on-scroll" style="margin-bottom:1.5rem;">
+      <span class="priority-badge pb-must">🔥 Priorité #2 — Incontournable Tunisie</span>
+      <div class="platform-name" style="color:#4a90e2;">Facebook</div>
+      <div class="platform-type">Réseau Social Mass Market · 11M+ Utilisateurs Tunisie</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">11M+</span><span class="pm-lbl">Utilisateurs TN</span></div>
+            <div class="pm-item"><span class="pm-num">72%</span><span class="pm-lbl">Pénétration TN</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>90%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="90"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#4a90e2;">Pourquoi Facebook est critique :</strong> Facebook reste LA plateforme dominante en Tunisie toutes catégories. B2C (familles, acheteurs résidentiels), PME (petits entrepreneurs cherchant des espaces F&B) et même B2B local. La page mettec.tn existe déjà — l'enjeu est d'en faire une machine à leads qualifiés avec publicité précise.
+          </p>
+          <ul>
+            <li>Campagnes Meta Ads avec ciblage par intérêt : construction, immobilier, décoration, investissement</li>
+            <li>Retargeting visiteurs site web (Meta Pixel)</li>
+            <li>Vidéos de timelapse de montage cabines (très haute viralité organique)</li>
+            <li>Facebook Lead Ads (formulaire direct intégré, friction minimale)</li>
+            <li>Groupe Facebook communautaire "Habitat Modulaire Tunisie"</li>
+            <li>Lives Q&A mensuels avec l'équipe technique METTEC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIORITÉ 3 : INSTAGRAM -->
+    <div class="platform-card priority-3 animate-on-scroll" style="margin-bottom:1.5rem;">
+      <span class="priority-badge pb-must">🔥 Priorité #3 — Vitrine Visuelle Premium</span>
+      <div class="platform-name" style="color:#e1306c;">Instagram</div>
+      <div class="platform-type">Plateforme Visuelle · Brand Awareness · Inspiration</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">4M+</span><span class="pm-lbl">Utilisateurs TN</span></div>
+            <div class="pm-item"><span class="pm-num">87%</span><span class="pm-lbl">Découverte Produit</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>80%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="80"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#e1306c;">Pourquoi Instagram est essentiel :</strong> La construction modulaire est visuellement spectaculaire. Les rendus 3D, les photos d'intérieur design et les vidéos "avant-après" sont du contenu Instagram parfait. C'est la plateforme d'inspiration pour B2C (villas, coffee shops, glamping) et aussi un pont vers les architectes et designers d'intérieur prescripteurs.
+          </p>
+          <ul>
+            <li>Feed unifié avec direction artistique cohérente (grille 9 cases thématique)</li>
+            <li>Reels quotidiens : "build days", visites virtuelles, rendus 3D animés</li>
+            <li>Stories interactives : sondages, quizz architecture, behind-the-scenes</li>
+            <li>Highlights organisés par gamme de produits</li>
+            <li>Collab avec architectes et influenceurs décoration tunisiens</li>
+            <li>Instagram Shopping pour les gammes cataloguées (devis via DM)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIORITÉ 4 : YOUTUBE -->
+    <div class="platform-card priority-4 animate-on-scroll" style="margin-bottom:1.5rem;">
+      <span class="priority-badge pb-high">⭐ Priorité #4 — SEO Long Terme</span>
+      <div class="platform-name" style="color:#ff0050;">YouTube</div>
+      <div class="platform-type">Moteur de Recherche Vidéo · SEO · Éducation</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">2Md</span><span class="pm-lbl">Utilisateurs Mondiaux</span></div>
+            <div class="pm-item"><span class="pm-num">#2</span><span class="pm-lbl">Moteur Recherche Mondial</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>70%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="70"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#ff0050;">Pourquoi YouTube est stratégique :</strong> Aucun concurrent tunisien n'a une chaîne YouTube professionnelle sur la construction modulaire. C'est un océan bleu total. Les vidéos éducatives longues (10–20 min) sur "Comment construire une maison modulaire en Tunisie" peuvent générer des milliers de vues organiques et des leads pendant des années. YouTube est aussi le 2ème moteur de recherche mondial.
+          </p>
+          <ul>
+            <li>Chaîne YouTube professionnelle avec playlists par gamme</li>
+            <li>Vidéos de processus complet : "de la commande à la livraison clé en main"</li>
+            <li>Documentaires mini de 10-15 min sur des projets emblématiques</li>
+            <li>Tutoriels : "Comment choisir votre cabine modulaire", FAQ vidéo</li>
+            <li>Optimization SEO YouTube : titres, descriptions, chapitres, thumbnails pro</li>
+            <li>Contenu en arabe dialectal tunisien pour B2C + français pour B2B</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIORITÉ 5 : TIKTOK -->
+    <div class="platform-card priority-5 animate-on-scroll" style="margin-bottom:1.5rem;">
+      <span class="priority-badge pb-high">⭐ Priorité #5 — Viralité & Jeune Audience</span>
+      <div class="platform-name" style="color:#69c9d0;">TikTok</div>
+      <div class="platform-type">Courte Vidéo Virale · Audience 18–35 ans</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">1.5Md</span><span class="pm-lbl">Utilisateurs Mondiaux</span></div>
+            <div class="pm-item"><span class="pm-num">53min</span><span class="pm-lbl">Temps/Jour Moyen</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>60%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="60"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#69c9d0;">Pourquoi TikTok vaut le détour :</strong> METTEC a déjà un compte TikTok. Le contenu de construction en accéléré (timelapse), les transformations "before/after" et les surprises architecturales font des millions de vues en dehors de la Tunisie. C'est idéal pour toucher les 25–38 ans qui veulent une maison alternative et pour créer la notoriété en Afrique francophone.
+          </p>
+          <ul>
+            <li>Timelapse montage cabines (10–60 sec) — format naturellement viral</li>
+            <li>POV : "Visite de ma future maison modulaire" — fort engagement</li>
+            <li>Démystification : "5 idées reçues sur la construction métallique"</li>
+            <li>Trending sounds + niche construction = reach organique fort</li>
+            <li>Fréquence : 3–5 posts/semaine minimum pour l'algorithme</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIORITÉ 6 : GOOGLE -->
+    <div class="platform-card priority-6 animate-on-scroll" style="margin-bottom:3rem;">
+      <span class="priority-badge pb-high">⭐ Priorité #6 — Capture de Demande</span>
+      <div class="platform-name" style="color:#ff6600;">Google (SEO + Ads)</div>
+      <div class="platform-type">Moteur de Recherche · Intention d'Achat · SEO</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2rem;margin-top:1rem;">
+        <div>
+          <div class="platform-metrics">
+            <div class="pm-item"><span class="pm-num">92%</span><span class="pm-lbl">Parts de Marché</span></div>
+            <div class="pm-item"><span class="pm-num">3.5Md</span><span class="pm-lbl">Recherches/Jour</span></div>
+          </div>
+          <div class="focus-label"><span>Intensité de Focus</span><span>65%</span></div>
+          <div class="focus-bar"><div class="focus-fill" data-width="65"></div></div>
+        </div>
+        <div>
+          <p style="color:var(--off-white);font-size:0.9rem;line-height:1.7;margin-bottom:0.8rem;">
+            <strong style="color:#ff6600;">Pourquoi Google ne peut pas être ignoré :</strong> Quand un DT cherche "cabine industrielle Tunisie" ou un particulier cherche "maison modulaire prix Tunisie", METTEC doit apparaître en premier. Google Ads capture la demande existante à fort taux de conversion. Le SEO organique du site doit être renforcé avec du contenu blog ciblé.
+          </p>
+          <ul>
+            <li>Campagnes Google Ads Search sur mots-clés ciblés (cabine modulaire, charpente métallique Tunisie)</li>
+            <li>Google My Business optimisé pour Monastir et Ben Arous</li>
+            <li>Blog SEO : articles longue traîne sur la construction modulaire (10+ articles/mois)</li>
+            <li>Landing pages dédiées par secteur (industriel, résidentiel, hôtellerie)</li>
+            <li>Remarketing Google Display sur visiteurs non convertis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plateformes secondaires -->
+    <div class="section-label animate-on-scroll" style="margin-bottom:1.5rem;">Plateformes Secondaires — Présence Recommandée</div>
+    <div class="grid-3 animate-on-scroll">
+      <div class="card">
+        <div class="card-icon">📌</div>
+        <h3>Pinterest</h3>
+        <p>Idéal pour les gammes résidentiel et F&B premium. Audience féminine 25–45 ans, inspiration décoration, architecture. Contenu evergreen avec fort referral SEO.</p>
+        <div style="margin-top:0.8rem;"><span class="tag tag-gold">B2C Résidentiel</span> <span class="tag tag-red">F&B & Tourisme</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>WhatsApp Business</h3>
+        <p>Canal CRM essentiel en Tunisie et Afrique. Catalogues produits, suivi commande, service après-vente, diffusion de promotions. Taux d'ouverture 98%.</p>
+        <div style="margin-top:0.8rem;"><span class="tag tag-green">CRM & SAV</span> <span class="tag tag-gold">Leads Chauds</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">✉️</div>
+        <h3>Email Marketing</h3>
+        <p>Newsletter mensuelle pour B2B : actualités secteur, nouveaux projets, articles blog. Séquences automatiques de nurturing pour leads non convertis.</p>
+        <div style="margin-top:0.8rem;"><span class="tag tag-blue">B2B Nurturing</span> <span class="tag tag-green">Newsletter</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — STRATÉGIE DE CONTENU
+═══════════════════════════════════════════════ -->
+<section id="contenu">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">07</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Content Strategy</div>
+        <h2 class="section-title animate-on-scroll">Les 4 Piliers du <em>Contenu</em></h2>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:1.2rem;" class="animate-on-scroll">
+      <div class="pillar p1">
+        <span class="pct">35%</span>
+        <h3>Pilier #1 — Preuve Sociale & Réalisations</h3>
+        <p>Le contenu le plus performant pour METTEC. Photos et vidéos des projets livrés avec témoignages clients authentiques, chiffres clés (surface, délai, budget respecté), noms de partenaires quand possible. Case studies complets sur LinkedIn. Avant/après sur Instagram et TikTok. Format : photo série, Reel, Article LinkedIn, vidéo mini-documentaire. <strong style="color:var(--off-white);">Objectif : construire la confiance, prouver l'expertise.</strong></p>
+      </div>
+      <div class="pillar p2">
+        <span class="pct">25%</span>
+        <h3>Pilier #2 — Éducation & Expertise Sectorielle</h3>
+        <p>Se positionner comme l'autorité référente. Articles de blog SEO, vidéos YouTube explicatives, Carrousels LinkedIn sur "Comment choisir sa charpente métallique", "Avantages des panneaux sandwichs vs. construction traditionnelle", "Pourquoi l'ISO 9001 change tout dans la construction". <strong style="color:var(--off-white);">Objectif : générer du trafic organique et du respect professionnel.</strong></p>
+      </div>
+      <div class="pillar p3">
+        <span class="pct">25%</span>
+        <h3>Pilier #3 — Coulisses & Culture METTEC</h3>
+        <p>Humaniser la marque. Visites de l'usine, portraits des artisans, processus de fabrication, qualité-contrôle, certifications ISO en action. TikTok et Instagram : "Un jour dans la vie d'un soudeur METTEC". LinkedIn : valeurs de l'entreprise, engagement RSE, innovation. <strong style="color:var(--off-white);">Objectif : créer une connexion émotionnelle, attirer des talents et rassurer les acheteurs.</strong></p>
+      </div>
+      <div class="pillar p4">
+        <span class="pct">15%</span>
+        <h3>Pilier #4 — Inspiration & Tendances</h3>
+        <p>Contenu de veille et d'inspiration : tendances mondiales de l'architecture modulaire, maisons off-grid dans le monde, projets africains innovants, nouveaux matériaux, solutions écologiques. Curation et commentaires d'expert. Pinterest-friendly, Instagram-ready. <strong style="color:var(--off-white);">Objectif : attirer l'audience en phase de découverte et de rêve.</strong></p>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;" class="animate-on-scroll">
+      <div class="section-label" style="margin-bottom:1.5rem;">Calendrier de Publication Hebdomadaire Recommandé</div>
+      <div class="kpi-table-wrapper" style="overflow-x:auto;">
+        <table class="kpi-table">
+          <thead>
+            <tr>
+              <th>Jour</th>
+              <th>LinkedIn (B2B)</th>
+              <th>Facebook (B2B+B2C)</th>
+              <th>Instagram (B2C)</th>
+              <th>TikTok (Viral)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Lundi</strong></td><td>Post projet livré + case study</td><td>Photo réalisation + description</td><td>Reel "Build Day" 30 sec</td><td>Timelapse montage</td></tr>
+            <tr><td><strong>Mardi</strong></td><td>—</td><td>Story interactive Q&A</td><td>—</td><td>Behind the scenes usine</td></tr>
+            <tr><td><strong>Mercredi</strong></td><td>Article long — expertise sectorielle</td><td>Infographie éducative</td><td>Carrousel gamme produits</td><td>—</td></tr>
+            <tr><td><strong>Jeudi</strong></td><td>Témoignage client vidéo</td><td>—</td><td>Reel inspiration architecturale</td><td>POV visite cabine</td></tr>
+            <tr><td><strong>Vendredi</strong></td><td>Actualité sectorielle + commentaire METTEC</td><td>Post culturel / RSE</td><td>Story poll "Quelle gamme préférez-vous ?"</td><td>—</td></tr>
+            <tr><td><strong>Samedi</strong></td><td>—</td><td>Vidéo processus clé en main</td><td>Post inspiration lifestyle</td><td>Avant/Après satisfaisant</td></tr>
+            <tr><td><strong>Dimanche</strong></td><td>—</td><td>—</td><td>Reel "5 raisons de choisir METTEC"</td><td>Tendance + construction</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — PUBLICITÉ PAYANTE
+═══════════════════════════════════════════════ -->
+<section id="paid" style="background: linear-gradient(180deg, rgba(224,92,42,0.02) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">08</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Performance Marketing</div>
+        <h2 class="section-title animate-on-scroll">Publicité <em>Payante</em></h2>
+      </div>
+    </div>
+
+    <div class="grid-2 animate-on-scroll" style="gap:2rem; margin-bottom:2rem;">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Meta Ads (Facebook + Instagram)</h3>
+        <div style="margin:0.8rem 0; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-blue">Lead Generation</span>
+          <span class="tag tag-gold">Brand Awareness</span>
+          <span class="tag tag-green">Retargeting</span>
+        </div>
+        <p style="margin-bottom:1rem;">Structure de campagne recommandée en 3 niveaux :</p>
+        <ul style="list-style:none;">
+          <li style="padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;color:var(--off-white);">🔝 <strong style="color:var(--gold);">TOF (Top of Funnel) :</strong> Vidéo brand awareness 15 sec, ciblage large Tunisie + Maghreb</li>
+          <li style="padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;color:var(--off-white);">🔄 <strong style="color:var(--accent2);">MOF (Middle of Funnel) :</strong> Carrousel gammes, audience similaire à la base email</li>
+          <li style="padding:0.4rem 0;font-size:0.85rem;color:var(--off-white);">🎯 <strong style="color:var(--green);">BOF (Bottom of Funnel) :</strong> Lead Ads directe, retargeting visiteurs web, offre devis gratuit 24h</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Google Ads</h3>
+        <div style="margin:0.8rem 0; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-red">Search Intent</span>
+          <span class="tag tag-blue">Display Remarketing</span>
+          <span class="tag tag-gold">YouTube Ads</span>
+        </div>
+        <p style="margin-bottom:1rem;">Mots-clés prioritaires à cibler :</p>
+        <ul style="list-style:none;">
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "cabine modulaire Tunisie prix"</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "charpente métallique Monastir"</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "maison préfabriquée Tunisie"</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "poste de gardiennage métallique"</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "panneaux sandwich Tunisie fournisseur"</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ "bureau modulaire chantier Afrique"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>LinkedIn Ads</h3>
+        <div style="margin:0.8rem 0; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-blue">Sponsored Content</span>
+          <span class="tag tag-gold">InMail</span>
+          <span class="tag tag-green">Lead Gen Forms</span>
+        </div>
+        <ul style="list-style:none; margin-top:0.5rem;">
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Ciblage : Directeurs techniques, DG, Responsables achats</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Industries : Construction, Industrie, Santé, Éducation, Hôtellerie</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Géo : Tunisie, Algérie, Maroc, Sénégal, Côte d'Ivoire</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Format : Document Ad (catalogue technique PDF), Video Ad</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Influence & Partenariats</h3>
+        <div style="margin:0.8rem 0; display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span class="tag tag-red">Micro-Influenceurs</span>
+          <span class="tag tag-green">Prescripteurs</span>
+        </div>
+        <ul style="list-style:none; margin-top:0.5rem;">
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Architectes tunisiens sur Instagram (10k–100k followers)</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ YouTubers décoration & construction arabe/français</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Bloggeurs immobilier Afrique du Nord</li>
+          <li style="padding:0.3rem 0;font-size:0.82rem;color:var(--off-white);">→ Partnership avec promoteurs immobiliers et bureaux d'études</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9 — PLAN D'ACTION
+═══════════════════════════════════════════════ -->
+<section id="plan">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">09</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Opérationnel</div>
+        <h2 class="section-title animate-on-scroll">Plan d'Action <em>12 Mois</em></h2>
+      </div>
+    </div>
+
+    <div class="timeline animate-on-scroll">
+      <!-- Phase 1 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-phase">Mois 1–2</div>
+          <h3>⚡ Phase 1 — Fondations</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+            <span class="tag tag-red">Urgent</span>
+            <span class="tag tag-gold">Branding</span>
+            <span class="tag tag-blue">Infrastructure</span>
+          </div>
+          <ul>
+            <li>Audit complet des comptes sociaux existants (Facebook, Instagram, TikTok, LinkedIn)</li>
+            <li>Création du Brand Book officiel METTEC (charte graphique, typographie, ton de voix)</li>
+            <li>Optimisation page LinkedIn Entreprise (About, certifications ISO, médias)</li>
+            <li>Installation Meta Pixel sur le site web + Google Analytics 4 + Tag Manager</li>
+            <li>Création templates de posts pour chaque plateforme</li>
+            <li>Tournage du brand film cinématographique (2–3 minutes)</li>
+            <li>Optimisation Google My Business (photos, horaires, description, catégories)</li>
+            <li>Lancement newsletter email (Mailchimp/Brevo) avec liste existante</li>
+          </ul>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-phase">Mois 2–4</div>
+          <h3>🚀 Phase 2 — Activation Contenu</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+            <span class="tag tag-green">Contenu</span>
+            <span class="tag tag-blue">Social Media</span>
+          </div>
+          <ul>
+            <li>Lancement du calendrier éditorial complet (4 piliers de contenu)</li>
+            <li>Production de 20 Reels Instagram/TikTok de stock (timelapse, before/after)</li>
+            <li>Lancement chaîne YouTube avec 4 vidéos fondatrices</li>
+            <li>Rédaction 8 articles SEO pour le blog du site (longue traîne ciblée)</li>
+            <li>Campagne Instagram : "500 projets, 500 histoires" — 1 projet/jour pendant 30 jours</li>
+            <li>Premier LinkedIn Article expert signé par le PDG</li>
+            <li>Lancement compte Pinterest (gammes résidentiel et F&B)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-phase">Mois 4–6</div>
+          <h3>💰 Phase 3 — Performance Paid</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+            <span class="tag tag-red">Paid Ads</span>
+            <span class="tag tag-gold">Lead Gen</span>
+          </div>
+          <ul>
+            <li>Lancement campagnes Meta Ads (TOF → MOF → BOF) avec budget test 1500 TND/mois</li>
+            <li>Lancement Google Ads Search sur 15 mots-clés prioritaires</li>
+            <li>Lancement LinkedIn Ads — Document Ad (catalogue technique) ciblé DT/DG</li>
+            <li>A/B testing sur visuels et copywriting publicités</li>
+            <li>Mise en place CRM simple (HubSpot Free ou Pipedrive) pour tracer les leads</li>
+            <li>Premier partenariat micro-influenceur architecture (1–2 créateurs)</li>
+            <li>Landing pages dédiées par segment (industriel, résidentiel, hôtellerie)</li>
+          </ul>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-phase">Mois 6–9</div>
+          <h3>📈 Phase 4 — Optimisation & Scale</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+            <span class="tag tag-blue">Optimisation</span>
+            <span class="tag tag-green">Scale</span>
+          </div>
+          <ul>
+            <li>Analyse des données : quels canaux génèrent les meilleurs leads ? Doubler le budget là</li>
+            <li>Traduction partielle du site en arabe (pages gammes + contact)</li>
+            <li>Lancement version LinkedIn en anglais pour marché export africain</li>
+            <li>Série YouTube "L'Architecture de demain en Afrique" — 6 épisodes</li>
+            <li>Campagne Google Display retargeting avec catalogues visuels</li>
+            <li>Développement partenariats architectes — programme prescripteurs</li>
+            <li>Live Instagram/Facebook mensuel : "METTEC vous répond"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phase 5 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-phase">Mois 9–12</div>
+          <h3>🌍 Phase 5 — Expansion & Autorité</h3>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.8rem;">
+            <span class="tag tag-red">Export</span>
+            <span class="tag tag-gold">Autorité</span>
+          </div>
+          <ul>
+            <li>Campagnes LinkedIn ciblant Algérie, Maroc, Sénégal, Côte d'Ivoire</li>
+            <li>Publication d'un "Livre Blanc" sur la construction modulaire en Afrique — lead magnet B2B</li>
+            <li>Participation à des salons professionnels avec support digital intégré</li>
+            <li>Lancement programme ambassadeurs clients (témoignages vidéo premium)</li>
+            <li>Webinaire LinkedIn : "Pourquoi les entreprises africaines choisissent le modulaire"</li>
+            <li>Bilan annuel complet : rapport KPIs, ajustement stratégie pour l'année 2</li>
+            <li>Objectif : 2000+ followers LinkedIn, 20k+ Facebook, 10k+ Instagram, 500+ abonnés YouTube</li>
+          </ul>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-spacer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10 — BUDGET
+═══════════════════════════════════════════════ -->
+<section id="budget" style="background: linear-gradient(180deg, rgba(61,140,111,0.02) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">10</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Investissement</div>
+        <h2 class="section-title animate-on-scroll">Budget <em>Recommandé</em></h2>
+      </div>
+    </div>
+
+    <div class="highlight-box animate-on-scroll" style="margin-bottom:3rem;">
+      <p style="color:var(--off-white); font-size:1rem; line-height:1.8;">
+        Budget mensuel recommandé : <strong style="color:var(--gold); font-size:1.2rem;">5 000 – 8 000 TND / mois</strong> pour une stratégie complète avec impact mesurable. Budget minimum viable : <strong style="color:var(--accent2);">2 500 TND / mois</strong> pour commencer avec les actions prioritaires uniquement. Le ROI attendu : <strong style="color:var(--green);">3x–5x</strong> sur 12 mois via leads qualifiés.
+      </p>
+    </div>
+
+    <div class="section-label animate-on-scroll" style="margin-bottom:0.5rem;">Répartition Budget Mensuel Recommandé (5 000 TND)</div>
+    <div class="budget-bar animate-on-scroll" id="budgetBar">
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#c9a84c,#e8c96a);" data-flex="30" data-label="Meta Ads — 30%">30%</div>
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#4a8fbd,#6aabcf);" data-flex="20" data-label="Prod. Contenu — 20%">20%</div>
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#e05c2a,#f08060);" data-flex="15" data-label="Google Ads — 15%">15%</div>
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#3d8c6f,#5aae8f);" data-flex="15" data-label="LinkedIn Ads — 15%">15%</div>
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#6a4fa0,#8a6fc0);" data-flex="10" data-label="Branding — 10%">10%</div>
+      <div class="budget-seg" style="flex:0;background:linear-gradient(135deg,#2e5c8a,#4e7caa);" data-flex="10" data-label="Influence & Divers — 10%">10%</div>
+    </div>
+    <div style="height:3rem;"></div>
+
+    <div class="animate-on-scroll" style="overflow-x:auto;">
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>Poste de Dépense</th>
+            <th>Budget Mensuel (TND)</th>
+            <th>Budget Annuel (TND)</th>
+            <th>ROI Attendu</th>
+            <th>Priorité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Meta Ads</strong> (Facebook + Instagram)</td><td>1 500</td><td>18 000</td><td>Leads directs B2C+B2B</td><td><span class="tag tag-red">Critique</span></td></tr>
+          <tr><td><strong>Production Contenu</strong> (photo, vidéo, copywriting)</td><td>1 000</td><td>12 000</td><td>Audience organique long terme</td><td><span class="tag tag-red">Critique</span></td></tr>
+          <tr><td><strong>Google Ads</strong> (Search + Display)</td><td>750</td><td>9 000</td><td>Capture demande existante</td><td><span class="tag tag-gold">Haute</span></td></tr>
+          <tr><td><strong>LinkedIn Ads</strong></td><td>750</td><td>9 000</td><td>Leads B2B qualifiés premium</td><td><span class="tag tag-gold">Haute</span></td></tr>
+          <tr><td><strong>Branding</strong> (Brand Book, templates, web)</td><td>500</td><td>6 000</td><td>Image premium, conversion</td><td><span class="tag tag-blue">Moyenne</span></td></tr>
+          <tr><td><strong>Influence & Partenariats</strong></td><td>500</td><td>6 000</td><td>Portée organique élargie</td><td><span class="tag tag-blue">Moyenne</span></td></tr>
+          <tr><td><strong style="color:var(--gold);">TOTAL</strong></td><td><strong style="color:var(--gold);">5 000</strong></td><td><strong style="color:var(--gold);">60 000</strong></td><td><strong style="color:var(--green);">ROI × 3–5 estimé</strong></td><td><span class="tag tag-gold">Complet</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 11 — KPIs
+═══════════════════════════════════════════════ -->
+<section id="kpi">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">11</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Mesure & Performance</div>
+        <h2 class="section-title animate-on-scroll">KPIs & <em>Objectifs</em></h2>
+      </div>
+    </div>
+
+    <div class="grid-4 animate-on-scroll" style="margin-bottom:3rem;">
+      <div class="card" style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1;">150+</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver);margin-top:0.4rem;">Leads Qualifiés / Mois</div>
+        <div style="font-size:0.8rem;color:var(--off-white);margin-top:0.6rem;">Objectif fin d'année 1</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1;">20k+</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver);margin-top:0.4rem;">Followers Facebook</div>
+        <div style="font-size:0.8rem;color:var(--off-white);margin-top:0.6rem;">+300% vs. aujourd'hui estimé</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1;">2k+</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver);margin-top:0.4rem;">Abonnés LinkedIn</div>
+        <div style="font-size:0.8rem;color:var(--off-white);margin-top:0.6rem;">Page Entreprise active</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1;">5%</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver);margin-top:0.4rem;">Taux Conversion Leads</div>
+        <div style="font-size:0.8rem;color:var(--off-white);margin-top:0.6rem;">Secteur BTP standard : 2–3%</div>
+      </div>
+    </div>
+
+    <div class="animate-on-scroll" style="overflow-x:auto;">
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>KPI</th>
+            <th>Baseline (M0)</th>
+            <th>Objectif M3</th>
+            <th>Objectif M6</th>
+            <th>Objectif M12</th>
+            <th>Outil de Mesure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Followers LinkedIn</strong></td><td>~200</td><td>500</td><td>1 000</td><td>2 500</td><td>LinkedIn Analytics</td></tr>
+          <tr><td><strong>Followers Facebook</strong></td><td>~5k est.</td><td>8 000</td><td>12 000</td><td>20 000+</td><td>Meta Business Suite</td></tr>
+          <tr><td><strong>Followers Instagram</strong></td><td>~2k est.</td><td>4 000</td><td>7 000</td><td>12 000</td><td>Meta Business Suite</td></tr>
+          <tr><td><strong>Abonnés YouTube</strong></td><td>0</td><td>100</td><td>400</td><td>1 000</td><td>YouTube Studio</td></tr>
+          <tr><td><strong>Trafic Web / Mois</strong></td><td>~500 sess.</td><td>1 500</td><td>3 000</td><td>6 000</td><td>Google Analytics 4</td></tr>
+          <tr><td><strong>Leads entrants / mois</strong></td><td>~20 est.</td><td>50</td><td>100</td><td>150+</td><td>CRM + Meta Ads</td></tr>
+          <tr><td><strong>Coût par Lead (Meta)</strong></td><td>N/A</td><td>&lt;25 TND</td><td>&lt;20 TND</td><td>&lt;15 TND</td><td>Meta Ads Manager</td></tr>
+          <tr><td><strong>Taux engagement Instagram</strong></td><td>N/A</td><td>3%</td><td>4%</td><td>5%+</td><td>Metricool / Later</td></tr>
+          <tr><td><strong>Abonnés Newsletter Email</strong></td><td>~100 est.</td><td>400</td><td>900</td><td>2 000</td><td>Mailchimp / Brevo</td></tr>
+          <tr><td><strong>Position Google "cabine modulaire Tunisie"</strong></td><td>Page 3+</td><td>Page 2</td><td>Page 1</td><td>Top 3</td><td>Google Search Console</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3 animate-on-scroll" style="margin-top:2rem;">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Reporting Mensuel</h3>
+        <p>Dashboard mensuel avec tous les KPIs clés, évolution des dépenses publicitaires, leads entrants, taux de conversion par canal. Présenté à la direction chaque 1er lundi du mois.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Revue Trimestrielle</h3>
+        <p>Analyse approfondie tous les 3 mois : quels canaux surperforment ? Quel contenu génère le plus d'engagement ? Ajustement de la stratégie et réallocation budgétaire en conséquence.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Outils Recommandés</h3>
+        <p>Google Analytics 4 · Meta Business Suite · LinkedIn Analytics · Google Search Console · Metricool (scheduling) · HubSpot Free (CRM) · Mailchimp/Brevo (email) · Canva Pro (design).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 12 — CONCLUSION
+═══════════════════════════════════════════════ -->
+<section id="conclusion" style="background: linear-gradient(180deg, rgba(201,168,76,0.04) 0%, transparent 100%);">
+  <div class="container">
+    <div class="chapter-header">
+      <div class="chapter-num">12</div>
+      <div class="chapter-title-group">
+        <div class="section-label animate-on-scroll">Synthèse</div>
+        <h2 class="section-title animate-on-scroll">Feuille de Route <em>Finale</em></h2>
+      </div>
+    </div>
+
+    <div class="big-quote animate-on-scroll" style="margin-bottom:4rem;">
+      METTEC a tous les ingrédients d'un <em style="color:var(--gold);">leader régional</em>.<br>Il lui manque uniquement <em style="color:var(--accent2);">la voix digitale</em> pour le faire savoir.
+    </div>
+
+    <div class="grid-2 animate-on-scroll" style="gap:2rem; margin-bottom:3rem;">
+      <div>
+        <div class="section-label" style="margin-bottom:1.5rem;">Les 10 Actions les Plus Importantes</div>
+        <ol style="list-style:none; counter-reset:action-counter;">
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">01</span>
+            <div><strong style="color:var(--off-white);">Brand Film</strong> <span style="color:var(--silver);font-size:0.85rem;">— Produire un film de marque cinématographique 2–3 min. C'est le contenu fondateur de tout.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">02</span>
+            <div><strong style="color:var(--off-white);">LinkedIn Entreprise</strong> <span style="color:var(--silver);font-size:0.85rem;">— Optimiser et activer la page LinkedIn avec publications régulières. ROI B2B maximal.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">03</span>
+            <div><strong style="color:var(--off-white);">Meta Pixel + CRM</strong> <span style="color:var(--silver);font-size:0.85rem;">— Installer le tracking dès aujourd'hui. Sans data, impossible d'optimiser.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">04</span>
+            <div><strong style="color:var(--off-white);">Calendrier Éditorial</strong> <span style="color:var(--silver);font-size:0.85rem;">— Publier régulièrement et de façon cohérente sur toutes les plateformes (au moins 3 posts/semaine).</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">05</span>
+            <div><strong style="color:var(--off-white);">Meta Ads (Facebook + Instagram)</strong> <span style="color:var(--silver);font-size:0.85rem;">— Lancer les campagnes lead gen avec 1 500 TND/mois minimum.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">06</span>
+            <div><strong style="color:var(--off-white);">YouTube</strong> <span style="color:var(--silver);font-size:0.85rem;">— Créer la chaîne et publier 1 vidéo documentaire de projet par mois minimum.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">07</span>
+            <div><strong style="color:var(--off-white);">Google My Business</strong> <span style="color:var(--silver);font-size:0.85rem;">— Optimisation complète des deux fiches (Monastir + Ben Arous). Gratuit et très efficace localement.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">08</span>
+            <div><strong style="color:var(--off-white);">Blog SEO</strong> <span style="color:var(--silver);font-size:0.85rem;">— Rédiger 2 articles de blog SEO par mois. Trafic organique qui s'accumule indéfiniment.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">09</span>
+            <div><strong style="color:var(--off-white);">Témoignages Vidéo Clients</strong> <span style="color:var(--silver);font-size:0.85rem;">— Filmer 5 témoignages clients authentiques. Preuve sociale = conversions multipliées.</span></div>
+          </li>
+          <li style="display:flex;gap:1rem;padding:0.8rem 0;align-items:flex-start;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">10</span>
+            <div><strong style="color:var(--off-white);">WhatsApp Business</strong> <span style="color:var(--silver);font-size:0.85rem;">— Configurer un compte pro avec catalogue, réponses automatiques et suivi lead systématique.</span></div>
+          </li>
+        </ol>
+      </div>
+
+      <div>
+        <div class="section-label" style="margin-bottom:1.5rem;">Vision 3 Ans — Où METTEC Doit Être</div>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);">An 1</div>
+              <div>
+                <div style="font-weight:600;color:var(--off-white);margin-bottom:0.3rem;">Domination Nationale</div>
+                <div style="font-size:0.85rem;color:var(--silver);">Leader digital incontesté de la construction modulaire en Tunisie. 20k+ followers, 150+ leads/mois, notoriété maximale.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--accent2);">An 2</div>
+              <div>
+                <div style="font-weight:600;color:var(--off-white);margin-bottom:0.3rem;">Référence Maghrébine</div>
+                <div style="font-size:0.85rem;color:var(--silver);">Présence forte en Algérie et au Maroc. 5+ projets export/an. Chaîne YouTube 5 000 abonnés. LinkedIn reconnu comme expert Afrique.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--green);">An 3</div>
+              <div>
+                <div style="font-weight:600;color:var(--off-white);margin-bottom:0.3rem;">Leader Panafricain & Europe</div>
+                <div style="font-size:0.85rem;color:var(--silver);">Présence Afrique subsaharienne + premiers projets Europe du Sud. Catalogue traduit EN/AR/FR. 50k+ total social followers.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-gold animate-on-scroll"><span>✦ METTEC 2026 ✦</span></div>
+
+    <div class="highlight-box animate-on-scroll" style="text-align:center; padding:3rem;">
+      <div class="section-label" style="justify-content:center; margin-bottom:1.5rem;">Message Final</div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-style:italic; color:var(--off-white); line-height:1.6; max-width:700px; margin:0 auto;">
+        METTEC construit depuis 15 ans des structures qui durent une éternité.<br>
+        Il est temps que sa <em style="color:var(--gold);">présence digitale</em> soit aussi <em style="color:var(--gold);">indestructible</em> que son acier.
+      </p>
+      <div style="margin-top:2rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <span class="tag tag-gold">LinkedIn — Autorité B2B</span>
+        <span class="tag tag-blue">Facebook — Reach Tunisie</span>
+        <span class="tag tag-red">Instagram — Inspiration Visuelle</span>
+        <span class="tag tag-green">YouTube — SEO Vidéo</span>
+        <span class="tag tag-gold">TikTok — Viralité</span>
+        <span class="tag tag-blue">Google — Capture Demande</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">METTEC</div>
+    <p style="margin-bottom:0.4rem;">Stratégie Marketing & Branding Complète — Rapport 2025–2026</p>
+    <p>Monastir, Tunisie · <a href="https://mettec.groupe-bayoudh.com" style="color:var(--gold);text-decoration:none;">mettec.groupe-bayoudh.com</a></p>
+    <p style="margin-top:1.5rem; font-size:0.75rem; color:rgba(138,154,181,0.5);">Document confidentiel · Analyse et recommandations stratégiques · Expert Digital Marketing & Branding</p>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progress').style.width = progress + '%';
+
+  const backTop = document.getElementById('backTop');
+  backTop.classList.toggle('visible', scrollTop > 400);
+});
+
+// Animate on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      // Animate focus bars inside
+      entry.target.querySelectorAll('.focus-fill[data-width]').forEach(bar => {
+        setTimeout(() => {
+          bar.style.width = bar.getAttribute('data-width') + '%';
+        }, 200);
+      });
+
+      // Animate budget bar
+      if (entry.target.id === 'budgetBar' || entry.target.querySelector('#budgetBar')) {
+        const segs = document.querySelectorAll('.budget-seg[data-flex]');
+        segs.forEach(seg => {
+          setTimeout(() => {
+            seg.style.flex = seg.getAttribute('data-flex');
+          }, 300);
+        });
+      }
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.animate-on-scroll, #budgetBar').forEach(el => observer.observe(el));
+
+// Animate all focus bars that are visible on load
+document.querySelectorAll('.focus-fill[data-width]').forEach(bar => {
+  const ob2 = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => { bar.style.width = bar.getAttribute('data-width') + '%'; }, 300);
+        ob2.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  ob2.observe(bar);
+});
+
+// Animate budget segments
+const budgetObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.budget-seg[data-flex]').forEach(seg => {
+        setTimeout(() => { seg.style.flex = seg.getAttribute('data-flex'); }, 200);
+      });
+      budgetObs.disconnect();
+    }
+  });
+}, { threshold: 0.4 });
+const budgetBar = document.getElementById('budgetBar');
+if (budgetBar) budgetObs.observe(budgetBar);
+
+// Smooth hover effect for cards
+document.querySelectorAll('.card, .platform-card, .persona-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const dx = (x - cx) / cx;
+    const dy = (y - cy) / cy;
+    card.style.transform = `translateY(-4px) perspective(800px) rotateY(${dx * 3}deg) rotateX(${-dy * 3}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+</script>
+</body>
+</html>
